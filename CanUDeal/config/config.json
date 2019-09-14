@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "King2012!",
+    "database": "canudealdb",
     "host": "localhost",
     "dialect": "mysql"
   },
