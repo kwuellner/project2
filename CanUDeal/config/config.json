@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "King2012!",
-    "database": "canudealdb",
+    "database": "freshair_db",
     "host": "localhost",
     "dialect": "mysql"
   },
