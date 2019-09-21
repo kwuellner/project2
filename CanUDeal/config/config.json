@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "101718Anp!",
     "database": "freshair_db",
     "host": "localhost",
     "dialect": "mysql"
