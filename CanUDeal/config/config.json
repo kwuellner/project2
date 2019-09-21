@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "password",
+    "database": "freshair_db",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
@@ -11,11 +12,16 @@
     "password": null,
     "database": "testdb",
     "host": "localhost",
+    "port": 3306,
     "dialect": "mysql",
     "logging": false
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "root",
+    "password": "password",
+    "database": "freshair_db",
+    "host": "localhost",
+    "port": 3306,
     "dialect": "mysql"
   }
 }
