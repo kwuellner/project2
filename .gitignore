@@ -1,1 +1,14 @@
+.DS_Store
 node_modules
+npm-debug.log
+package-lock.json
+.env
+
+{
+  "development": {
+    "username": "root",
+    "password": "King2012!",
+    "database": "freshair_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
