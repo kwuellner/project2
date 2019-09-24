@@ -1,14 +1,16 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  {{!-- Below used for Google Log-in --}}
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
-  <meta name="google-signin-client_id" content="AIzaSyDJKyVoeta5u2NqF1b3UNILK_jKgJkg8BM.apps.googleusercontent.com">
-  <script src="/js/googleLogIn.js"></script>
+
+{{!-- Below used for Google Log-in --}}
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="AIzaSyDJKyVoeta5u2NqF1b3UNILK_jKgJkg8BM.apps.googleusercontent.com">
+<script src="/js/googleLogIn.js"></script>
+
 
 <div class="parallax">
   <div class="home-text">
     <h1>Fresh <em>A i r</em></h1>
-    <h2 class="slogan">Your Adventure Begins<button class="btn default"><em>Here</em></button>
+    <h2 class="slogan">Your Adventure Begins<button class="btn default"><a href="#login"><em>Here</em></a></button>
     </h2>
   </div>
 </div>
@@ -19,20 +21,31 @@
   <br>
   <h4>To get started please login or sign up for a new account using one of the following methods</h4>
   <br>
-  <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
-<br>
-<!-- The Modal -->
-<div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p><form>
-			<div class="form-group">
-				<input id="name" type="text" class="form-control" placeholder="Name (Required)">
-			</div>
+
+  
+{{!-- <div class="parallax">
+  <div class="home-text">
+    <h1>survey</h1>
+    <h2 class="slogan">Your Adventure Begins<button class="btn default"><em>Here</em></button>
+    </h2>
+  </div>
+</div> --}}
+
+<div class="parallax1" id="par-text">
+  <h2 class="text">Please fill out the survey below!</h2>
+</div>
+
+<div class="container" id="survey">
+  <h2>Survey!</h2>
+ 
+  <br>
+  <br>
+  <br>
+<div class="survey-content">
+     <p><form>
 			
+			</div>
 			<div class="form-group">
 				<label for="question1">What's Your Budget?</label>
 				<select class="form-control" id="question1">
@@ -43,176 +56,109 @@
 					
 				</select>
 			</div>
-			<div class="form-group">
+      <label for="question4">What Dates Will You Be Traveling?</label>
+      <br>
+      <br>
+     <input type="date" name="datefilter" value="" />
+     <br>
+     <br>
+     <p>through</p>
+     <br>
+     <input type="date" name="datefilter" value="" />
+     <br>
+     <br>
+			
+      
+      
+      <div class="form-group">
 				<label for="question2">How Would You Like to Get There?</label>
 				<select class="form-control" id="question2">
 					<option value="empty"></option>
-					<option value="1"><i class='fas fa-plane' style='font-size:36px'></i></option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
+					<option value="1">Plane</i></option>
+					<option value="2">Car</option>
+					
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="question3">I think very highly of myself.</label>
+				<label for="question3">What Kind of Climate Would You Prefer?</label>
 				<select class="form-control" id="question3">
 					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
+					<option value="1">Sunny</option>
+					<option value="2">Fall</option>
+					<option value="3">Winter</option>
+					<option value="4">Spring</option>
+					
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="question4">I enjoy starring in major motion pictures.</label>
+				<label for="question4">Would You Call Yourself Outdoorsy?</label>
 				<select class="form-control" id="question4">
 					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
+					<option value="1">Absolutley! I love the great outdoors!</option>
+					<option value="2">Yes, but some ameneties close by would be nice!</option>
+					<option value="3">Absolutley not, ever!</option>
+					
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="question5">I have the body of a greek god!</label>
+				<label for="question5">What Lodging Would You Prefer?</label>
 				<select class="form-control" id="question5">
 					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
+					<option value="1">Hotel</option>
+					<option value="2">Camping</option>
+					<option value="3">AirBnB</option>
+					
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="question6">I am God's gift to the opposite sex.</label>
+				<label for="question6">Where Might You Be on a Saturday Night?</label>
 				<select class="form-control" id="question6">
 					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
+					<option value="1">Concert?</option>
+					<option value="2">Gaxing at the stars?</option>
+					<option value="3">Going out with friends?</option>
+					
 				</select>
 			</div>
-			<div class="form-group">
-				<label for="question7">I/m just...kinda there, bouncing in the wind.</label>
-				<select class="form-control" id="question7">
-					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="question8">I am so rich, like many many houses rich</label>
-				<select class="form-control" id="question8">
-					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="question9">I'm long and gross and have word antenea in my head.</label>
-				<select class="form-control" id="question9">
-					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-				</select>
-			</div>
-			<div class="form-group">
-				<label for="question10">I'm a total ladies man.</label>
-				<select class="form-control" id="question10">
-					<option value="empty"></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-				</select>
-			</div>
+			
 		</form></p>
   </div>
 
 </div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-<br>
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <a href="#" class="fa fa-google"></a>
-  <a href="#" class="fa fa-linkedin"></a>
 </div>
 
+
+<div class="parallax2" id="par-text">
+  <h2 class="text">Here are your results!</h2>
+</div>
+
+<div class="container" id="results">
+  <h2>Results!</h2>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</div>
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 
-<script>// Get the modal
-        var modal = document.getElementById("myModal");
-        
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-        
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-        
-        // When the user clicks on the button, open the modal 
-        btn.onclick = function() {
-          modal.style.display = "block";
-        }
-        
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-          modal.style.display = "none";
-        }
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
-        }
+<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
 
+<script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
 </script>
- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
 
