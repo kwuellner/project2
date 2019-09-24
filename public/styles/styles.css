@@ -39,17 +39,58 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.parallax3 {
+
+  background-image: url("../images/newyork.jpeg");
+
+ 
+  height: 50%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   
 }
 
 .text {
   text-align: center;
-  transform: translate(0%, 350%);
+  transform: translate(0%, 250%);
   color: rgb(226, 221, 221);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   text-shadow: 1px 1px black; 
   opacity: .9;
+}
+
+.g-signin2 {
+  position: absolute;
+  transform: translate(450%, 250%);
+  opacity: .9;
+}
+
+.l-signin {
+  position: absolute;
+  transform: translate(400%, 70%);
+  opacity: .9;
+  
+}
+
+#up-button {
+  font-size: 35px;
+  float: right;
+  transform: translate(10%, 200%);
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: rgb(226, 221, 221);
+}
+
+.text {
+  cursor: text;
 }
 
 .slogan{
@@ -82,7 +123,7 @@ body, html {
     opacity: .9;
   }
 
-  #login {
+  #welcome {
     text-align: center;
     color: rgb(0, 0, 0);
     font-family: Arial, Helvetica, sans-serif
