@@ -89,10 +89,81 @@
           })
         });
       })
+
+      let config = {
+        ".chosen-select": {},
+        ".chosen-select-deselect": {
+          allow_single_deselect: true
+        },
+        ".chosen-select-no-single": {
+          disable_search_threshold: 10
+        },
+        ".chosen-select-no-results": {
+          no_results_text: "Sorry, nothing found!"
+        },
+        ".chosen-select-width": {
+          width: "95%"
+        }
+      };
+
+      for (let selector in config) {
+        $(selector).chosen(config[selector]);
+      }
+
+      // getting form inputs
+      $("#submit").on("click", function (event) {
+        event.preventDefault();
+
+        function checkForm() {
+          let ifValid = true;
+          $(".form-control").each(function () {
+            if ($(this).val() === "") {
+              ifValid = false;
+            }
+          });
+
+          $(".chosen-select").each(function () {
+            if ($(this).val() === "") {
+              ifValid = false;
+            }
+          });
+          return ifValid;
+        }
+
+        if (checkForm()) {
+
+          let userInfo = {
+            name: $("#name").val(),
+            photo: $("#photo").val(),
+            scores: [
+              $("#q1").val(),
+              $("#q2").val(),
+              $("#q3").val(),
+              $("#q4").val(),
+              $("#q5").val(),
+              $("#q6").val(),
+              $("#q7").val(),
+              $("#q8").val(),
+              $("#q9").val(),
+              $("#q10").val()
+            ]
+          };
+          // ajax data post
+          $.post("/api/destinatiions", userInfo, function (data) {
+
+            $("#match-name").text(data.name);
+            $("#match-img").attr("src", data.photo);
+
+            $("#results-modal").modal("toggle");
+          });
+        } else {
+          alert("All fields must be completed before submitting!");
+        }
+      });
     </script>
+
   </div>
 
-  {{!-- <p class="text">Scroll Up</p> --}}
   <a href="#home" id="up-button"><i class="fa fa-angle-up"></i></a>
 </div>
 
@@ -142,8 +213,6 @@
   <br>
   <br>
 
-
-
   <div class="form-group">
     <label for="question2">How Would You Like to Get There?</label>
     <select class="form-control" id="question2">
@@ -190,7 +259,7 @@
       <option value="empty"></option>
       <option value="1">Concert?</option>
       <option value="2">Gaxing at the stars?</option>
-      <option value="3">Going out with friends?</option>
+      <option value="3">Going out with destinations?</option>
 
     </select>
   </div>
