@@ -2,8 +2,11 @@
 
 {{!-- Below used for Google Log-in --}}
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
 <meta name="google-signin-client_id" content="AIzaSyDJKyVoeta5u2NqF1b3UNILK_jKgJkg8BM.apps.googleusercontent.com">
 <script src="/js/googleLogIn.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
 
 {{!-- used for facebook log in --}}
 <div id="fb-root"></div>
@@ -16,7 +19,8 @@
     <div class="fixed-top">
       <h1>Fresh <em>A i r</em></h1>
     </div>
-    <h2 class="slogan">Your Adventure Begins<button class="btn default"><a href="#login"><em>Here</em></a></button>
+    <h2 class="slogan" id="home">Your Adventure Begins<button class="btn default"><a
+          href="#login"><em>Here</em></a></button>
     </h2>
   </div>
 </div>
@@ -61,10 +65,33 @@
   <div class="l-signin">
     <a id="linkedin-button" class="btn btn-block btn-social btn-linkedin">
       <i class="fa fa-linkedin" aria-hidden="true"></i>Linkedin</a>
+
+    <script>
+      $('#linkedin-button').on('click', function () {
+        // Initialize with your OAuth.io app public key
+        OAuth.initialize('stnRiXp9igo8wZYrUsRAzRJ0uV4');
+        // Use popup for oauth
+        OAuth.popup('linkedin2').then(linkedin => {
+          console.log('linkedin:', linkedin);
+          // Prompts 'welcome' message with User's email on successful login
+          // #me() is a convenient method to retrieve user data without requiring you
+          // to know which OAuth provider url to call
+          linkedin.me().then(data => {
+            console.log('me data:', data);
+            alert('Linkedin says your email is:' + data.email + ".\nView browser 'Console Log' for more details");
+          })
+          // Retrieves user data from OAuth provider by using #get() and
+          // OAuth provider url
+          linkedin.get('/v2/me').then(data => {
+            console.log('self data:', data);
+          })
+        });
+      })
+    </script>
   </div>
+
   {{!-- <p class="text">Scroll Up</p> --}}
-  <a href="#welcome" id="up-button"><i class="fa fa-angle-up"></i>
-  </a>
+  <a href="#home" id="up-button"><i class="fa fa-angle-up"></i></a>
 </div>
 
 <div class="container" id="survey">
@@ -82,8 +109,7 @@
   <br>
   <h2 class="text">Fill out the survey so we can get to know you better</h2>
   <br>
-  <button id="up-button"><i class="fa fa-angle-up"><a href="#welcome"></a></i>
-  </button>
+  <a href="#home" id="up-button"><i class="fa fa-angle-up"></i></a>
 </div>
 
 <div class="container" id="survey">
@@ -183,8 +209,7 @@
   <br>
   <h2 class="text">Enjoy the Fresh <em>A i r!</em></h2>
   <br>
-  <button id="up-button"><i class="fa fa-angle-up"><a href="#welcome"></a></i>
-  </button>
+  <a href="#home" id="up-button"><i class="fa fa-angle-up"></i></a>
 </div>
 
 <div class="container" id="results">
@@ -203,6 +228,3 @@
     <i="fa fa-copyright">@Lintlickers 2019</i>
   </span>
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
