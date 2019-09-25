@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {{!-- Below used for Google Log-in --}}
@@ -5,106 +6,130 @@
 <meta name="google-signin-client_id" content="AIzaSyDJKyVoeta5u2NqF1b3UNILK_jKgJkg8BM.apps.googleusercontent.com">
 <script src="/js/googleLogIn.js"></script>
 
-{{!-- used for facebook log in --}}
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-  src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
-
 
 <div class="parallax">
   <div class="home-text">
-    <div class="fixed-top">
-      <h1>Fresh <em>A i r</em></h1>
-    </div>
+    <h1>Fresh <em>A i r</em></h1>
     <h2 class="slogan">Your Adventure Begins<button class="btn default"><a href="#login"><em>Here</em></a></button>
     </h2>
   </div>
 </div>
 
-<div class="container" id="welcome">
+<div class="container" id="login">
   <h2>Thank you for choosing Fresh <em>A i r</em> to book your next getaway!</h2>
-  <br>
-  <br>
-  <h2>In just three steps you will have a surprise vacation curated just for you!</h2>
-  <br>
-  <br>
-
-  {{!-- <h2>We hope you enjoy it!</h2>
+  <h2>We hope you enjoy it!</h2>
   <br>
   <h4>To get started please login or sign up for a new account using one of the following methods</h4>
+  <br>
 
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <a href="#" class="fa fa-google"></a>
-  <a href="#" class="fa fa-linkedin"></a> --}}
-</div>
 
-{{!-- <div class="parallax3" id="par-text">
-  <h2 class="text">Step 1</h2>
-</div>
-
-<div class="container" id="login">
-  <h2>To get started please login or sign up for a new account</h2>
-  <a href="#" class="fa fa-facebook"></a>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  
+{{!-- <div class="parallax">
+  <div class="home-text">
+    <h1>survey</h1>
+    <h2 class="slogan">Your Adventure Begins<button class="btn default"><em>Here</em></button>
+    </h2>
+  </div>
 </div> --}}
 
 <div class="parallax1" id="par-text">
-  <h1 class="text"><em>Step 1</em></h1>
-  <br>
-  <h2 class="text">To get started please login or sign up for a new account below</h2>
-  <br>
-  <div class="fb-login-button" data-width="" data-size="medium" data-button-type="login_with"
-    data-auto-logout-link="false" data-use-continue-as="false"></div>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <div class="l-signin">
-    <a id="linkedin-button" class="btn btn-block btn-social btn-linkedin">
-      <i class="fa fa-linkedin" aria-hidden="true"></i>Linkedin</a>
-  </div>
-  {{!-- <p class="text">Scroll Up</p> --}}
-  <a href="#welcome" id="up-button"><i class="fa fa-angle-up"></i>
-  </a>
-</div>
-
-<div class="container" id="survey">
-  <h2>Login!</h2>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-</div>
-<div class="parallax2" id="par-text">
-  <h1 class="text"><em>Step 2</em></h1>
-  <br>
-  <h2 class="text">Fill out the survey so we can get to know you better</h2>
-  <br>
-  <button id="up-button"><i class="fa fa-angle-up"><a href="#welcome"></a></i>
-  </button>
+  <h2 class="text">Please fill out the survey below!</h2>
 </div>
 
 <div class="container" id="survey">
   <h2>Survey!</h2>
+ 
   <br>
   <br>
   <br>
-  <br>
-  <br>
-  <br>
+<div class="survey-content">
+     <p><form>
+			
+			</div>
+			<div class="form-group">
+				<label for="question1">What's Your Budget?</label>
+				<select class="form-control" id="question1">
+					<option value="empty"></option>
+					<option value="1">$500-$1000</option>
+					<option value="2">$1000-$1500</option>
+					<option value="3">$1500-$2000</option>
+					
+				</select>
+			</div>
+      <label for="question4">What Dates Will You Be Traveling?</label>
+      <br>
+      <br>
+     <input type="date" name="datefilter" value="" />
+     <br>
+     <br>
+     <p>through</p>
+     <br>
+     <input type="date" name="datefilter" value="" />
+     <br>
+     <br>
+			
+      
+      
+      <div class="form-group">
+				<label for="question2">How Would You Like to Get There?</label>
+				<select class="form-control" id="question2">
+					<option value="empty"></option>
+					<option value="1">Plane</i></option>
+					<option value="2">Car</option>
+					
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="question3">What Kind of Climate Would You Prefer?</label>
+				<select class="form-control" id="question3">
+					<option value="empty"></option>
+					<option value="1">Sunny</option>
+					<option value="2">Fall</option>
+					<option value="3">Winter</option>
+					<option value="4">Spring</option>
+					
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="question4">Would You Call Yourself Outdoorsy?</label>
+				<select class="form-control" id="question4">
+					<option value="empty"></option>
+					<option value="1">Absolutley! I love the great outdoors!</option>
+					<option value="2">Yes, but some ameneties close by would be nice!</option>
+					<option value="3">Absolutley not, ever!</option>
+					
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="question5">What Lodging Would You Prefer?</label>
+				<select class="form-control" id="question5">
+					<option value="empty"></option>
+					<option value="1">Hotel</option>
+					<option value="2">Camping</option>
+					<option value="3">AirBnB</option>
+					
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="question6">Where Might You Be on a Saturday Night?</label>
+				<select class="form-control" id="question6">
+					<option value="empty"></option>
+					<option value="1">Concert?</option>
+					<option value="2">Gaxing at the stars?</option>
+					<option value="3">Going out with friends?</option>
+					
+				</select>
+			</div>
+			
+		</form></p>
+  </div>
 
+</div>
 </div>
 
 
-<div class="parallax3" id="par-text">
-  <h1 class="text"><em>Step 3</em></h1>
-  <br>
-  <h2 class="text">Enjoy the Fresh <em>A i r!</em></h2>
-  <br>
-  <button id="up-button"><i class="fa fa-angle-up"><a href="#welcome"></a></i>
-  </button>
+<div class="parallax2" id="par-text">
+  <h2 class="text">Here are your results!</h2>
 </div>
 
 <div class="container" id="results">
@@ -118,11 +143,22 @@
 
 </div>
 
-<div class="sticky-bottom" id="footer">
-  <span>
-    <i="fa fa-copyright">@Lintlickers 2019</i>
-  </span>
-</div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+
+<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+
+<script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script>
+
+
+
+
