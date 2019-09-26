@@ -2,9 +2,14 @@
 
 {{!-- Below used for Google Log-in --}}
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-<meta name="google-signin-client_id" content="AIzaSyDJKyVoeta5u2NqF1b3UNILK_jKgJkg8BM.apps.googleusercontent.com">
+
+
+<meta name="google-signin-client_id" content="538147433048-ih0o0a96lbk1ud8f4vaknv1394lh3g6r.apps.googleusercontent.com">
+
 <script src="/js/googleLogIn.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
 
 {{!-- used for facebook log in --}}
 <div id="fb-root"></div>
@@ -28,9 +33,7 @@
 	                     
 
     </div>
-	
-	  
-	
+
     <h2 class="slogan">Your Adventure Begins<button class="btn default"><a href="#login"><em>Here</em></a></button>
     </h2>
   </div>
@@ -76,10 +79,104 @@
   <div class="l-signin">
     <a id="linkedin-button" class="btn btn-block btn-social btn-linkedin">
       <i class="fa fa-linkedin" aria-hidden="true"></i>Linkedin</a>
+
+    <script>
+      $('#linkedin-button').on('click', function () {
+        // Initialize with your OAuth.io app public key
+        OAuth.initialize('stnRiXp9igo8wZYrUsRAzRJ0uV4');
+        // Use popup for oauth
+        OAuth.popup('linkedin2').then(linkedin => {
+          console.log('linkedin:', linkedin);
+          // Prompts 'welcome' message with User's email on successful login
+          // #me() is a convenient method to retrieve user data without requiring you
+          // to know which OAuth provider url to call
+          linkedin.me().then(data => {
+            console.log('me data:', data);
+            alert('Linkedin says your email is:' + data.email + ".\nView browser 'Console Log' for more details");
+          })
+          // Retrieves user data from OAuth provider by using #get() and
+          // OAuth provider url
+          linkedin.get('/v2/me').then(data => {
+            console.log('self data:', data);
+          })
+        });
+      })
+
+      let config = {
+        ".chosen-select": {},
+        ".chosen-select-deselect": {
+          allow_single_deselect: true
+        },
+        ".chosen-select-no-single": {
+          disable_search_threshold: 10
+        },
+        ".chosen-select-no-results": {
+          no_results_text: "Sorry, nothing found!"
+        },
+        ".chosen-select-width": {
+          width: "95%"
+        }
+      };
+
+      for (let selector in config) {
+        $(selector).chosen(config[selector]);
+      }
+
+      // getting form inputs
+      $("#submit").on("click", function (event) {
+        event.preventDefault();
+
+        function checkForm() {
+          let ifValid = true;
+          $(".form-control").each(function () {
+            if ($(this).val() === "") {
+              ifValid = false;
+            }
+          });
+
+          $(".chosen-select").each(function () {
+            if ($(this).val() === "") {
+              ifValid = false;
+            }
+          });
+          return ifValid;
+        }
+
+        if (checkForm()) {
+
+          let userInfo = {
+            name: $("#name").val(),
+            photo: $("#photo").val(),
+            scores: [
+              $("#q1").val(),
+              $("#q2").val(),
+              $("#q3").val(),
+              $("#q4").val(),
+              $("#q5").val(),
+              $("#q6").val(),
+              $("#q7").val(),
+              $("#q8").val(),
+              $("#q9").val(),
+              $("#q10").val()
+            ]
+          };
+          // ajax data post
+          $.post("/api/destinatiions", userInfo, function (data) {
+
+            $("#match-name").text(data.name);
+            $("#match-img").attr("src", data.photo);
+
+            $("#results-modal").modal("toggle");
+          });
+        } else {
+          alert("All fields must be completed before submitting!");
+        }
+      });
+    </script>
+
   </div>
-  {{!-- <p class="text">Scroll Up</p> --}}
-  <a href="#welcome" id="up-button"><i class="fa fa-angle-up"></i>
-  </a>
+
+  <a href="#home" id="up-button"><i class="fa fa-angle-up"></i></a>
 </div>
 
 <div class="container" id="survey">
@@ -97,8 +194,7 @@
   <br>
   <h2 class="text">Fill out the survey so we can get to know you better</h2>
   <br>
-  <button id="up-button"><i class="fa fa-angle-up"><a href="#welcome"></a></i>
-  </button>
+  <a href="#home" id="up-button"><i class="fa fa-angle-up"></i></a>
 </div>
 
 <div class="container" id="survey-questions">
@@ -130,8 +226,6 @@
   </div>
   <br>
   <br>
-
-
 
   <div class="form-group">
     <label for="question2">How Would You Like to Get There?</label>
@@ -179,7 +273,7 @@
       <option value="empty"></option>
       <option value="1">Concert?</option>
       <option value="2">Gaxing at the stars?</option>
-      <option value="3">Going out with friends?</option>
+      <option value="3">Going out with destinations?</option>
 
     </select>
   </div>
@@ -202,8 +296,7 @@
   <br>
   <h2 class="text">Enjoy the Fresh <em>A i r!</em></h2>
   <br>
-  <button id="up-button"><i class="fa fa-angle-up"><a href="#welcome"></a></i>
-  </button>
+  <a href="#home" id="up-button"><i class="fa fa-angle-up"></i></a>
 </div>
 
 <div class="container" id="results">
@@ -222,6 +315,3 @@
     <i="fa fa-copyright">Lintlickers 2019</i>
   </span>
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>

@@ -1,26 +1,26 @@
 {
   "development": {
-    "username": "root",
-    "password": "101718Anp!",
-    "database": "freshair_db",
-    "host": "localhost",
+    "username": "b0fb55f622919c",
+    "password": "cb889a90",
+    "database": "heroku_d2b019fea45b171",
+    "host": "us-cdbr-iron-east-02.cleardb.net",
     "port": 3306,
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "testdb",
-    "host": "localhost",
+    "username": "b0fb55f622919c",
+    "password": "cb889a90",
+    "database": "heroku_d2b019fea45b171",
+    "host": "us-cdbr-iron-east-02.cleardb.net",
     "port": 3306,
     "dialect": "mysql",
     "logging": false
   },
   "production": {
-    "username": "root",
-    "password": "password",
-    "database": "freshair_db",
-    "host": "localhost",
+    "username": "b0fb55f622919c",
+    "password": "cb889a90",
+    "database": "heroku_d2b019fea45b171",
+    "host": "us-cdbr-iron-east-02.cleardb.net",
     "port": 3306,
     "dialect": "mysql"
   }
