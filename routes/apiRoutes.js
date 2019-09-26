@@ -6,13 +6,15 @@ module.exports = function (app) {
   app.get("/api/destinations", function (req, res) {
     db.Destination.findAll({}).then(function (dbDestinations) {
       res.json(dbDestinations);
+      console.log(`GET dbDestinations = ${dbDestinations}`);
     });
   });
 
   // Create a new example
-  app.post("/api/destinations", function (req, res) {
+  app.post("/api/destination", function (req, res) {
     db.Destination.create(req.body).then(function (dbDestination) {
-      res.json(dbDestination);
+      res.json(dbDestination);      
+      console.log(`POST dbDestination = ${dbDestination}`);
     });
     let yourMatch = {
       name: "",

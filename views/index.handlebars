@@ -9,7 +9,6 @@
 <script src="/js/googleLogIn.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
 
 
 {{!-- used for facebook log in --}}
@@ -250,6 +249,7 @@
   </div>
   <div class="text-center">
     <button id="submitBtn" type="submit" class="btn btn-success btn-lg">Let's Go!</button>
+    <button id="randomBtn" type="submit" class="btn btn-success btn-lg">Randomize!</button>
   </div>
   </form>
   </p>
@@ -271,6 +271,13 @@
 </div>
 
 <div class="container" id="results">
+  <ul id="example-list" class="list-group">
+    {{#each examples}}
+     <li data-id="{{this.id}}" class="list-group-item">
+        <a href="example/{{this.id}}">{{this.text}}</a>
+        <button class="btn btn-danger float-right delete">ｘ</button>
+      </li>
+    {{/each}}
   <br>
   <br>
   <br>
@@ -279,7 +286,7 @@
   <br>
 
 </div>
-
+<script src="/js/index.js"></script>
 <div class="sticky-bottom" id="footer">
   <span>
     <i="fa fa-copyright">Lintlickers 2019</i>
