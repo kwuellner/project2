@@ -1,9 +1,10 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 {{!-- Below used for Google Log-in --}}
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="AIzaSyDJKyVoeta5u2NqF1b3UNILK_jKgJkg8BM.apps.googleusercontent.com">
 <script src="/js/googleLogIn.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 {{!-- used for facebook log in --}}
 <div id="fb-root"></div>
@@ -14,8 +15,22 @@
 <div class="parallax">
   <div class="home-text">
     <div class="fixed-top">
-      <h1>Fresh <em>A i r</em></h1>
+      <h1>Fresh <em>A i r</em><div id="icons">
+	  <i class="fa fa-plane" id="plane"></i>
+	  <i class="fa fa-suitcase" id="suitcase"></i>
+	  <i class="fa fa-compass" "fa-rotate-90" id="compass"></i>
+	  </div> </h1>
+	  
+	  
+	  
+	 
+	
+	                     
+
     </div>
+	
+	  
+	
     <h2 class="slogan">Your Adventure Begins<button class="btn default"><a href="#login"><em>Here</em></a></button>
     </h2>
   </div>
@@ -86,7 +101,7 @@
   </button>
 </div>
 
-<div class="container" id="survey">
+<div class="container" id="survey-questions">
   <div class="survey-content">
     <p>
       <form>
@@ -102,15 +117,17 @@
 
     </select>
   </div>
-  <label for="question4">What Dates Will You Be Traveling?</label>
+  <label for="question4" id="survey-label">What Dates Will You Be Traveling?</label>
   <br>
   <br>
-  <input type="date" name="datefilter" value="" />
+    <div class="dates">
+  <input type="date" class="dates" name="datefilter" value="" />
   <br>
   <br>
   <p>through</p>
   <br>
   <input type="date" name="datefilter" value="" />
+  </div>
   <br>
   <br>
 
@@ -120,7 +137,7 @@
     <label for="question2">How Would You Like to Get There?</label>
     <select class="form-control" id="question2">
       <option value="empty"></option>
-      <option value="1">Plane</i></option>
+      <option value="1">Plane</option>
       <option value="2">Car</option>
 
     </select>
@@ -166,7 +183,9 @@
 
     </select>
   </div>
-
+<div class="text-center">
+			<button id="submitBtn" type="submit" class="btn btn-success btn-lg">Let's Go!</button>
+		</div>	
   </form>
   </p>
 </div>
@@ -200,7 +219,7 @@
 
 <div class="sticky-bottom" id="footer">
   <span>
-    <i="fa fa-copyright">@Lintlickers 2019</i>
+    <i="fa fa-copyright">Lintlickers 2019</i>
   </span>
 </div>
 

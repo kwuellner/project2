@@ -2,6 +2,12 @@ body, html {
   height: 100%;
 }
 
+h1 {
+  margin-left: 20px;
+}
+
+
+
 .parallax {
 
   background-image: url("../images/banff.jpeg");
@@ -13,6 +19,9 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  
+    
 }
 
 .parallax1 {
@@ -54,6 +63,39 @@ body, html {
   background-size: cover;
   
 }
+
+
+.fixed-top {
+  
+  animation-duration: 3.5s;
+  animation-name: slidein;
+  
+}
+
+@keyframes slidein {
+  from {
+    margin-left:300%;
+    width:300%
+  }
+  
+  to {
+    margin-left:0%;
+    width:100%;
+  }
+}
+
+#icons {
+  font-size: 100;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+#suitcase {
+  margin-right: 10px
+  
+}
+
+
 
 .text {
   text-align: center;
@@ -102,6 +144,21 @@ body, html {
   color: rgb(226, 221, 221);
   text-shadow: 1px 1px black; 
   opacity: .9;
+  animation-duration: 3.5s;
+  animation-name: slidein;
+  
+}
+
+@keyframes slidein {
+  from {
+    margin-left:100%;
+    width:300%
+  }
+  
+  to {
+    margin-left:0%;
+    width:100%;
+  }
 }
 
 .btn {
@@ -121,7 +178,9 @@ body, html {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-shadow: 1px 1px black; 
     opacity: .9;
-  }
+}
+    
+  
 
   #welcome {
     text-align: center;
@@ -171,3 +230,15 @@ body, html {
 .list-group-item {
   line-height: 2.5;
 }
+
+
+
+#survey-questions {
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 300;
+  background-color:lightskyblue;
+}
+
+
+
