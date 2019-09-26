@@ -1,15 +1,16 @@
-
-
 {{!-- Below used for Google Log-in --}}
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 
 <meta name="google-signin-client_id" content="538147433048-ih0o0a96lbk1ud8f4vaknv1394lh3g6r.apps.googleusercontent.com">
 
+<script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+<link src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
 <script src="/js/googleLogIn.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
+
 
 {{!-- used for facebook log in --}}
 <div id="fb-root"></div>
@@ -20,17 +21,19 @@
 <div class="parallax">
   <div class="home-text">
     <div class="fixed-top">
-      <h1>Fresh <em>A i r</em><div id="icons">
-	  <i class="fa fa-plane" id="plane"></i>
-	  <i class="fa fa-suitcase" id="suitcase"></i>
-	  <i class="fa fa-compass" "fa-rotate-90" id="compass"></i>
-	  </div> </h1>
-	  
-	  
-	  
-	 
-	
-	                     
+      <h1>Fresh <em>A i r</em>
+        <div id="icons">
+          <i class="fa fa-plane" id="plane"></i>
+          <i class="fa fa-suitcase" id="suitcase"></i>
+          <i class="fa fa-compass" "fa-rotate-90" id="compass"></i>
+        </div>
+      </h1>
+
+
+
+
+
+
 
     </div>
 
@@ -46,27 +49,7 @@
   <h2>In just three steps you will have a surprise vacation curated just for you!</h2>
   <br>
   <br>
-
-  {{!-- <h2>We hope you enjoy it!</h2>
-  <br>
-  <h4>To get started please login or sign up for a new account using one of the following methods</h4>
-
-  <a href="#" class="fa fa-facebook"></a>
-  <a href="#" class="fa fa-twitter"></a>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  <a href="#" class="fa fa-google"></a>
-  <a href="#" class="fa fa-linkedin"></a> --}}
 </div>
-
-{{!-- <div class="parallax3" id="par-text">
-  <h2 class="text">Step 1</h2>
-</div>
-
-<div class="container" id="login">
-  <h2>To get started please login or sign up for a new account</h2>
-  <a href="#" class="fa fa-facebook"></a>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-</div> --}}
 
 <div class="parallax1" id="par-text">
   <h1 class="text"><em>Step 1</em></h1>
@@ -154,10 +137,6 @@
               $("#q4").val(),
               $("#q5").val(),
               $("#q6").val(),
-              $("#q7").val(),
-              $("#q8").val(),
-              $("#q9").val(),
-              $("#q10").val()
             ]
           };
           // ajax data post
@@ -180,7 +159,6 @@
 </div>
 
 <div class="container" id="survey">
-  <h2>Login!</h2>
   <br>
   <br>
   <br>
@@ -216,13 +194,13 @@
   <label for="question4" id="survey-label">What Dates Will You Be Traveling?</label>
   <br>
   <br>
-    <div class="dates">
-  <input type="date" class="dates" name="datefilter" value="" />
-  <br>
-  <br>
-  <p>through</p>
-  <br>
-  <input type="date" name="datefilter" value="" />
+  <div class="dates">
+    <input type="date" class="dates" name="datefilter" value="" />
+    <br>
+    <br>
+    <p>through</p>
+    <br>
+    <input type="date" name="datefilter" value="" />
   </div>
   <br>
   <br>
@@ -277,9 +255,9 @@
 
     </select>
   </div>
-<div class="text-center">
-			<button id="submitBtn" type="submit" class="btn btn-success btn-lg">Let's Go!</button>
-		</div>	
+  <div class="text-center">
+    <button id="submitBtn" type="submit" class="btn btn-success btn-lg">Let's Go!</button>
+  </div>
   </form>
   </p>
 </div>
@@ -300,7 +278,6 @@
 </div>
 
 <div class="container" id="results">
-  <h2>Results!</h2>
   <br>
   <br>
   <br>
