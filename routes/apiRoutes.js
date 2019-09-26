@@ -1,5 +1,5 @@
 var db = require("../models");
-let destinations = require("../models/vacations");
+let destinations = require("../public/js/vacations");
 
 module.exports = function (app) {
   // Get all examples
