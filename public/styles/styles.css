@@ -123,7 +123,7 @@ h1 {
 #up-button {
   font-size: 35px;
   float: right;
-  transform: translate(10%, 200%);
+  transform: translate(-15%, 200%);
   background-color: transparent;
   cursor: pointer;
   outline: none;
