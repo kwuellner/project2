@@ -1,7 +1,8 @@
-// Begin boilerplate: Get references to page elements
+// Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
+var $randomBtn = $("#randomBtn")
 var $exampleList = $("#example-list");
 
 // The API object contains methods for each kind of request we'll make
@@ -12,19 +13,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/destinations",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
-      url: "api/examples",
+      url: "api/destinations",
       type: "GET"
     });
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/examples/" + id,
+      url: "api/destinations/" + id,
       type: "DELETE"
     });
   }
@@ -32,16 +33,18 @@ var API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
+  event.preventDefault();
   API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
+    var $examples = data.map(function(destination) {
+
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(destination.name)
+        .attr("href", "/destination/" + destination.id);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": example.id
+          "data-id": destination.id
         })
         .append($a);
 
@@ -96,4 +99,5 @@ var handleDeleteBtnClick = function() {
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
+$randomBtn.on("click", refreshExamples);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);

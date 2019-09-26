@@ -4,6 +4,8 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Destination.findAll({}).then(function(dbDestinations) {
+      console.log("The dbDestinations.id = " + db.Destination.id);
+
       res.render("index", {
         msg: "Check out these fresh spots!",
         destinations: dbDestinations
@@ -11,11 +13,12 @@ module.exports = function(app) {
     });
   });
 
-  // Load example page and pass in an example by id
+  // Load destination details page and pass in an example by id
   app.get("/destination/:id", function(req, res) {
     db.Destination.findOne({ where: { id: req.params.id } }).then(function(dbDestination) {
-      res.render("example", {
-        destinations: dbDestination
+      // console.log(db.Destination);
+      res.render("destination", {
+        destination: dbDestination
       });
     });
   });
