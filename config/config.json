@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "King2012!",
-    "database": "freshair_db",
-    "host": "localhost",
+    "username": "b0fb55f622919c",
+    "password": "cb889a90",
+    "database": "heroku_d2b019fea45b171",
+    "host": "us-cdbr-iron-east-02.cleardb.net",
     "port": 3306,
     "dialect": "mysql"
   },
@@ -11,7 +11,7 @@
     "username": "b0fb55f622919c",
     "password": "cb889a90",
     "database": "heroku_d2b019fea45b171",
-    "host": "localhost",
+    "host": "us-cdbr-iron-east-02.cleardb.net",
     "port": 3306,
     "dialect": "mysql",
     "logging": false
@@ -20,7 +20,7 @@
     "username": "b0fb55f622919c",
     "password": "cb889a90",
     "database": "heroku_d2b019fea45b171",
-    "host": "localhost",
+    "host": "us-cdbr-iron-east-02.cleardb.net",
     "port": 3306,
     "dialect": "mysql"
   }
