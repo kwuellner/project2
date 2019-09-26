@@ -25,7 +25,7 @@ var API = {
   },
   deleteExample: function(id) {
     return $.ajax({
-      url: "api/destinations/" + id,
+      url: "api/destination/" + id,
       type: "DELETE"
     });
   }
@@ -36,7 +36,7 @@ var refreshExamples = function() {
   event.preventDefault();
   API.getExamples().then(function(data) {
     var $examples = data.map(function(destination) {
-
+      console.log(data);
       var $a = $("<a>")
         .text(destination.name)
         .attr("href", "/destination/" + destination.id);
@@ -97,7 +97,7 @@ var handleDeleteBtnClick = function() {
   });
 };
 
-// Add event listeners to the submit and delete buttons
+// Add event listeners to buttons
 $submitBtn.on("click", handleFormSubmit);
 $randomBtn.on("click", refreshExamples);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);

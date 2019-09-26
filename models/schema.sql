@@ -1,5 +1,0 @@
-DROP DATABASE IF EXISTS freshair_db;
-CREATE DATABASE freshair_db;
-
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
